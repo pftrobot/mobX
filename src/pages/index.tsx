@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useEffect, useState } from 'react'
+import { Nav } from '@/pages/nav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -96,6 +97,44 @@ function TodoController() {
 
 	return (
 		<>
+			<h1>MVVM Sample</h1>
+			<TodoList todos={todos} toggleComplete={toggleComplete} />
+			<AddTodoForm addTodo={addTodo} />
+		</>
+	)
+}
+
+// ViewModel
+function TodoViewModel() {
+	const [todos, setTodos] = useState<Todo[]>([])
+
+	useEffect(() => {
+		const model = new TodoModel()
+		setTodos(model.getTodos())
+	}, [])
+
+	const addTodo = (todo) => {
+		const model = new TodoModel()
+		model.addTodo(todo)
+		setTodos(model.getTodos())
+	}
+
+	const toggleComplete = (id) => {
+		const model = new TodoModel()
+		model.toggleComplete(id)
+		setTodos(model.getTodos())
+	}
+
+	return { todos, addTodo, toggleComplete }
+}
+
+// View
+function TodoApp() {
+	const { todos, addTodo, toggleComplete } = TodoViewModel()
+
+	return (
+		<>
+			<h1>MVVM Sample</h1>
 			<TodoList todos={todos} toggleComplete={toggleComplete} />
 			<AddTodoForm addTodo={addTodo} />
 		</>
@@ -105,7 +144,8 @@ function TodoController() {
 export default function Home() {
 	return (
 		<>
-			<TodoController />
+			<Nav />
+			<TodoApp />
 		</>
 	)
 }
