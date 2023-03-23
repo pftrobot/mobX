@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useEffect, useState } from 'react'
 import { Nav } from '@/pages/nav'
+import styled from 'styled-components'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -133,19 +134,48 @@ function TodoApp() {
 	const { todos, addTodo, toggleComplete } = TodoViewModel()
 
 	return (
-		<>
+		<ComponentWrapper>
 			<h1>MVVM Sample</h1>
 			<TodoList todos={todos} toggleComplete={toggleComplete} />
 			<AddTodoForm addTodo={addTodo} />
-		</>
+		</ComponentWrapper>
 	)
 }
 
 export default function Home() {
 	return (
-		<>
+		<PageWrapper>
 			<Nav />
-			<TodoApp />
-		</>
+			<ContentWrapper>
+				<TodoApp />
+			</ContentWrapper>
+		</PageWrapper>
 	)
 }
+
+export const PageWrapper = styled.div`
+	height: 100%;
+	color: #111;
+	background-color: #fff;
+`
+
+export const ContentWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`
+
+export const ComponentWrapper = styled.div`
+	flex: 1;
+	width: 90%;
+	max-width: 500px;
+	min-height: 240px;
+	font-size: 20px;
+	line-height: 1.5;
+
+	h1 {
+		font-size: 40px;
+		text-align: center;
+		margin-bottom: 24px;
+	}
+`

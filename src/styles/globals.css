@@ -105,3 +105,47 @@ a {
     color-scheme: dark;
   }
 }
+
+
+
+/*
+* RESET
+*/
+html, body, h1, h2, h3, h4, h5, h6, div, p, span, span, blockquote, pre, ul, ol, dl, dt, dd, main, section, header, footer, nav, menu, a, address, article, aside, canvas, code, img, video, audio, table, input, textarea, label, figure, fieldset, figcaption{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body{
+  line-height: 1;
+}
+html, body{
+  height: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+  font-size: 1rem;
+  font-weight: normal;
+}
+ol, ul, li{
+  list-style: none;
+}
+table,th,td{
+  border-spacing:0;
+  border-collapse:collapse;
+}
+a:hover, a:active, a:visited, a:focus, a:link{
+  color: #000;
+  text-decoration: none;
+}
+img{
+  border: 0;
+}
+
+
+
+/*
+* GLOBAL STYLE
+*/
+body{
+  background: #fff;
+}

@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import { Nav } from '@/pages/nav'
+import { ComponentWrapper, ContentWrapper, PageWrapper } from '@/pages/index'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -93,19 +94,21 @@ function TodoController() {
 	}
 
 	return (
-		<>
+		<ComponentWrapper>
 			<h1>MVC Sample</h1>
 			<TodoList todos={todos} toggleComplete={toggleComplete} />
 			<AddTodoForm addTodo={addTodo} />
-		</>
+		</ComponentWrapper>
 	)
 }
 
 export default function Home() {
 	return (
-		<>
+		<PageWrapper>
 			<Nav />
-			<TodoController />
-		</>
+			<ContentWrapper>
+				<TodoController />
+			</ContentWrapper>
+		</PageWrapper>
 	)
 }
