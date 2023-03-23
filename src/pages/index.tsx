@@ -163,6 +163,14 @@ export const ContentWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+
+	h1 {
+		width: 100%;
+		font-size: 40px;
+		text-align: center;
+		margin-bottom: 24px;
+	}
 `
 
 export const ComponentWrapper = styled.div`
@@ -172,10 +180,4 @@ export const ComponentWrapper = styled.div`
 	min-height: 240px;
 	font-size: 20px;
 	line-height: 1.5;
-
-	h1 {
-		font-size: 40px;
-		text-align: center;
-		margin-bottom: 24px;
-	}
 `

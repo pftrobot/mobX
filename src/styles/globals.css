@@ -149,3 +149,7 @@ img{
 body{
   background: #fff;
 }
+
+input{
+  margin-right: 12px;
+}

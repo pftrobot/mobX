@@ -11,6 +11,12 @@ export function Nav() {
 				<li>
 					<Link href={'/mvc'}>MVC</Link>
 				</li>
+				<li>
+					<Link href={'/readme'}>MobX</Link>
+				</li>
+				<li>
+					<Link href={'/mobx-core'}>MobXCore</Link>
+				</li>
 			</ul>
 		</NavWrapper>
 	)
@@ -19,7 +25,9 @@ export function Nav() {
 const NavWrapper = styled.div`
 	ul {
 		display: flex;
-		justify-content: flex-start;
+		align-items: center;
+		justify-content: center;
+		padding: 40px 0;
 
 		li {
 			a {

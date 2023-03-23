@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 import { StyleSheetManager } from 'styled-components'
+import { Nav } from '@/pages/nav'
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [isMounted, setIsMounted] = useState(false)
